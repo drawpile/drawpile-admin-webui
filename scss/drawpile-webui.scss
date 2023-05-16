@@ -1,0 +1,142 @@
+@import "pico";
+
+:root {
+  --font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+/* Avoid UI jerking up and down when the session list is short. */
+body {
+  padding-bottom: 25rem;
+}
+
+.error {
+  color: var(--del-color);
+}
+
+.input-padded {
+  padding:
+    var(--form-element-spacing-vertical)
+    var(--form-element-spacing-horizontal);
+}
+
+a.danger {
+  background-color: var(--del-color);
+}
+
+a.uncolored {
+  color: var(--text-color);
+}
+
+img.favicon {
+  max-width: 3rem;
+  max-height: 3rem;
+}
+
+tr.faded {
+  opacity: 50%;
+}
+
+.listserver-sessions-column-flags,
+.listserver-sessions-column-users,
+.listserver-sessions-column-status,
+.listserver-sessions-column-select,
+.listserver-hostbans-column-edit,
+.listserver-hostbans-column-delete,
+.listserver-roles-column-sessions,
+.listserver-roles-column-hostbans,
+.listserver-roles-column-roles,
+.listserver-roles-column-users,
+.listserver-roles-column-edit,
+.listserver-roles-column-delete,
+.listserver-users-column-edit,
+.listserver-users-column-delete {
+  text-align: center;
+}
+
+.listserver-sessions-column {
+  white-space: nowrap;
+}
+
+tr.error > td {
+  color: var(--del-color);
+}
+
+.listserver-sessions-column-title {
+  width: 100%;
+}
+
+.listserver-sessions-unlist-reason-timedout, .listserver-sessions-unlist-reason-unlisted {
+  font-style: italic;
+}
+
+th.column-sortable {
+  cursor: pointer;
+}
+
+th.column-sort-asc:before {
+  content: "↑";
+}
+
+th.column-sort-desc:before {
+  content: "↓";
+}
+
+dl:not(.legend) > dt {
+  font-weight: bold;
+}
+
+dl:not(.legend) > dt:before {
+  content: "";
+  display: block;
+}
+
+dl.legend > dt:after {
+  content: " - ";
+}
+
+dl.legend > dd:not(:last-child):after {
+  content: " / ";
+}
+
+dd {
+  margin-inline-start: 0.25rem;
+}
+
+dl.legend > dd {
+  margin-inline-start: 0;
+}
+
+dt, dd:not(.no-inline) {
+  display: inline;
+}
+
+/* Remove extra top margin from nested lists. */
+:where(dl,ol,ul) :is(dl,ul,ol) {
+  margin-top: 0;
+}
+
+/* Indent nested bulleted lists inside dls properly. */
+dl :is(ul,ol) {
+  margin-left: var(--spacing);
+}
+
+article > header > h1, figure {
+  margin-bottom: 0;
+}
+
+top-bar > nav {
+  border-bottom: 1px solid var(--muted-border-color);
+  background-color: var(--card-background-color);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+top-bar img {
+  height: 3rem;
+  margin-top: -1.5rem;
+  margin-bottom: -1.15rem;
+}
+
+listserver-navlink > a {
+  width: 100%;
+}

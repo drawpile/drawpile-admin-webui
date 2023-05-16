@@ -1,0 +1,20 @@
+{
+  "name": "drawpile-admin-webui",
+  "version": "1.0.0",
+  "description": "Unified Drawpile admin web interface.",
+  "scripts": {
+    "build:js": "esbuild src/index.ts --bundle --minify --sourcemap --outfile=dist/drawpile-webui.js",
+    "build:css": "node-sass --source-map=true --output=dist --output-style=compressed --include-path=node_modules/@picocss/pico/scss scss",
+    "build:html": "node scripts/build-html.mjs index.template.html dist/index.html drawpile-webui.css drawpile-webui.js logo.svg",
+    "build": "npm run build:js && npm run build:css && npm run build:html",
+    "dev": "npm run build -- http://localhost:8080/admin"
+  },
+  "author": "askmeaboutloom",
+  "license": "MIT",
+  "dependencies": {
+    "@picocss/pico": "^1.5.10",
+    "esbuild": "^0.17.19",
+    "lit": "^2.7.4",
+    "node-sass": "^9.0.0"
+  }
+}
